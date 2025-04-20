@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://4pl6umwidoix"]
+
+[ext_resource type="Script" uid="uid://vmbcyufus4dx" path="res://cookie_player.gd" id="1_6uit0"]
+[ext_resource type="Texture2D" uid="uid://clfogma3r86gg" path="res://assets/nest2.png" id="2_g11xd"]
+[ext_resource type="Texture2D" uid="uid://cvrgsfqkkoqdh" path="res://assets/cropped_cookie.png" id="3_6uit0"]
+
+[node name="CookiePlayer" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_6uit0")
+
+[node name="Nest" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -182.0
+offset_right = 250.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g11xd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Cookie" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -119.0
+offset_right = 100.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("3_6uit0")
+expand_mode = 1
+stretch_mode = 5

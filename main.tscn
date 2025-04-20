@@ -1,0 +1,377 @@
+[gd_scene load_steps=18 format=3 uid="uid://dk7e5kcog1rq6"]
+
+[ext_resource type="PackedScene" uid="uid://dbbklajgsmhu5" path="res://radial_stripes.tscn" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://c0yyhs8fio46o" path="res://assets/cookie.png" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://clfogma3r86gg" path="res://assets/nest2.png" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://cr5wvp58lr1b" path="res://area_2d.gd" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://bsodu0pp06rpr" path="res://assets/c2fb160f-5c22-4cbf-a0ec-a45ca769452c.png" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://itkr3hlcmgk4" path="res://control_2.gd" id="7_4c57u"]
+[ext_resource type="Texture2D" uid="uid://1qofcaruy2iw" path="res://assets/wood.png" id="8_5vw27"]
+[ext_resource type="AudioStream" uid="uid://c7rlrtggt42rh" path="res://assets/bite.mp3" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://4cku8ey1nswn" path="res://assets/cursor.png" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://8a7362ch47m5" path="res://assets/grandma.png" id="10_4c57u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0, 0, 0.572549)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vw27"]
+radius = 112.04
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 85.0
+content_margin_bottom = 8.0
+bg_color = Color(0.212305, 0.212305, 0.212305, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c57u"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560955, 0.560955, 0.560955, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 85.0
+content_margin_bottom = 8.0
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.466181, 0.466181, 0.466181, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 85.0
+content_margin_bottom = 8.0
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.466181, 0.466181, 0.466181, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycdy4"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 85.0
+content_margin_bottom = 8.0
+bg_color = Color(0.212305, 0.212305, 0.212305, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_lquwl")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("8_5vw27")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kek77")
+bbcode_enabled = true
+text = "0 Cookies
+per second: 0.00"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Control2" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("7_4c57u")
+
+[node name="RadialStripes" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2" instance=ExtResource("3_1bvp3")]
+layout_mode = 2
+
+[node name="Area2D" type="Area2D" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2"]
+position = Vector2(541, 249)
+script = ExtResource("5_272bh")
+
+[node name="Nest" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2/Area2D"]
+position = Vector2(0, 12.0619)
+scale = Vector2(0.333749, 0.350064)
+texture = ExtResource("5_7mycd")
+
+[node name="Cookie" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2/Area2D"]
+position = Vector2(0, -75.9381)
+scale = Vector2(0.133751, 0.14029)
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2/Area2D"]
+position = Vector2(1, -77)
+shape = SubResource("CircleShape2D_5vw27")
+
+[node name="Timer" type="Timer" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2"]
+unique_name_in_owner = true
+autostart = true
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+texture = ExtResource("8_5vw27")
+expand_mode = 1
+
+[node name="Container" type="Control" parent="."]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997034, 1)
+mouse_filter = 1
+
+[node name="Cursor" type="Button" parent="Container"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.490196)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = -100.0
+offset_right = 545.0
+offset_bottom = -25.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5vw27")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c57u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dg77c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_efxa6")
+disabled = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="Container/Cursor"]
+layout_mode = 0
+offset_left = 14.0417
+offset_top = -34.0
+offset_right = 92.0417
+offset_bottom = 44.0
+rotation = 0.525161
+scale = Vector2(1.33797, 1.33797)
+texture = ExtResource("9_kek77")
+expand_mode = 1
+
+[node name="Currency" type="TextureRect" parent="Container/Cursor"]
+modulate = Color(0.6, 0.6, 0.6, 1)
+self_modulate = Color(0.859132, 0.891364, 0.964829, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.3185
+offset_top = 6.5
+offset_right = -44.3185
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lquwl")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Container/Cursor"]
+layout_mode = 0
+offset_left = 61.1816
+offset_top = 12.0
+offset_right = 158.182
+offset_bottom = 54.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Cursor"
+
+[node name="Price" type="Label" parent="Container/Cursor"]
+layout_mode = 0
+offset_left = 76.2262
+offset_top = 39.0
+offset_right = 173.226
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(1, 0.225434, 0.198009, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "15"
+
+[node name="Amount" type="Label" parent="Container/Cursor"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -45.5417
+offset_top = -34.5
+offset_right = -5.54173
+offset_bottom = 34.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.400698, 0.400698, 0.400698, 1)
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+
+[node name="Grandma" type="Button" parent="Container"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -545.0
+offset_top = -100.0
+offset_right = -300.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ycdy4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c57u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dg77c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_efxa6")
+disabled = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="Container/Grandma"]
+layout_mode = 0
+offset_left = -1.73456
+offset_right = 52.2654
+offset_bottom = 54.0
+scale = Vector2(1.33797, 1.33797)
+texture = ExtResource("10_4c57u")
+expand_mode = 1
+
+[node name="Currency" type="TextureRect" parent="Container/Grandma"]
+modulate = Color(0.6, 0.6, 0.6, 1)
+self_modulate = Color(0.859132, 0.891364, 0.964829, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0441
+offset_top = 6.5
+offset_right = -43.0441
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lquwl")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Container/Grandma"]
+layout_mode = 0
+offset_left = 60.4499
+offset_top = 12.0
+offset_right = 173.45
+offset_bottom = 54.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Grandma"
+
+[node name="Price" type="Label" parent="Container/Grandma"]
+layout_mode = 0
+offset_left = 77.2292
+offset_top = 39.0
+offset_right = 174.229
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(1, 0.223529, 0.196078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "100"
+
+[node name="Amount" type="Label" parent="Container/Grandma"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -45.5417
+offset_top = -34.5
+offset_right = -5.54173
+offset_bottom = 34.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.400698, 0.400698, 0.400698, 1)
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_4c57u")
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/Control2/Area2D" to="MarginContainer/HBoxContainer/VBoxContainer/Control2/Area2D" method="_on_mouse_entered"]

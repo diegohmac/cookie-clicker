@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbbklajgsmhu5"]
+
+[ext_resource type="Script" uid="uid://b1i2kivsdod8k" path="res://radial_stripes.gd" id="1_wv2e0"]
+[ext_resource type="Texture2D" uid="uid://bmxfqd0pkr08k" path="res://assets/stripe6.png" id="3_hhrly"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("1_wv2e0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -375.0
+offset_right = 375.0
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hhrly")
+expand_mode = 1
+stretch_mode = 5
